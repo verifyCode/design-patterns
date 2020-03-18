@@ -1,6 +1,7 @@
 package com.creation.d03_singleton_pattern;
 
-import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author xjn
@@ -13,7 +14,7 @@ public class ContainerSingleton {
 
     }
 
-    private static final HashMap<String, Object> map = new HashMap<>();
+    private static final Map<String, Object> map = new ConcurrentHashMap<>();
 
     public static void putInstance(String key, Object instance) {
         if (map.containsKey(key)) {
